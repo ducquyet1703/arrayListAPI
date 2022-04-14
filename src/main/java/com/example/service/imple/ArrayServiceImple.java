@@ -10,7 +10,6 @@ import com.example.repository.arraySort1Repository;
 import com.example.repository.arraySort2Repository;
 import com.example.repository.arrayFindStrRepository;
 import com.example.service.ArrayService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -22,15 +21,23 @@ import java.util.concurrent.ThreadLocalRandom;
 @Service
 public class ArrayServiceImple implements ArrayService {
 
-    @Autowired
-    array1Repository arrayARepository;
-    @Autowired
-    arraySort1Repository  arrayBRepository;
-    @Autowired
-    arraySort2Repository arrayCRepostitory;
-    @Autowired
-    arrayFindStrRepository arrayDRepostitory;
+    private  final  array1Repository arrayARepository;
 
+    private  final arraySort1Repository  arrayBRepository;
+
+    private final  arraySort2Repository arrayCRepostitory;
+
+    private final  arrayFindStrRepository arrayDRepostitory;
+
+    public ArrayServiceImple(array1Repository arrayARepository,
+                             arraySort1Repository arrayBRepository,
+                             arraySort2Repository arrayCRepostitory,
+                             arrayFindStrRepository arrayDRepostitory)
+    {   this.arrayARepository = arrayARepository;
+        this.arrayBRepository = arrayBRepository;
+        this.arrayCRepostitory = arrayCRepostitory;
+        this.arrayDRepostitory = arrayDRepostitory;
+    }
 
     // Create Array 1000 - 10000 element, random 1->10 characters
     @Override
