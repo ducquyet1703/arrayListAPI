@@ -27,7 +27,7 @@ public class Controller {
     public List<ArrayRandomEntity> sort2() {
         return  array1Service.sort2();
     }
-    @PostMapping("/findStr/{string}")
+    @PostMapping("/findStr")
     public List<ArrayRandomEntity> findStrAp(@PathVariable("string") String string) {
         return array1Service.findStr(string);
     }
